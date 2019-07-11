@@ -119,7 +119,7 @@ function ComputerInput(){
 
      
 
-    var i =  Boxes[Math.floor(Math.random()*Boxes.length)]; // creates random computer input from the current values in the Boxes array(available boxes).
+    var i =  Boxes[Math.floor(Math.random()*Boxes.length)]; // creates random computer input from the current values in the Boxes array(availabe ).
    
 
    //the next couple if else statement tell the computer what to do when the user picks some certain boxes and the corresponding boxes around them are free.
@@ -370,13 +370,12 @@ function ComputerInput(){
     document.getElementById(i).innerText="O";
     }
 
-     computerInput.push(i);
+    
      
   }
 function UserWins(){
 
-    
-     // tests conditions for the use to win
+   
       if (document.getElementById("1").innerText == "X" && document.getElementById("2").innerText == "X" && document.getElementById("3").innerText == "X" ){
         
           return true;
@@ -424,7 +423,7 @@ function UserWins(){
   }
 function ComputerWins(){
 // tests conditions for the computer to win
-.
+
     if (document.getElementById("1").innerText == "O" && document.getElementById("2").innerText == "O" && document.getElementById("3").innerText == "O" ){
        
         return true;
@@ -470,6 +469,8 @@ function ComputerWins(){
 }
 function CheckWinner(){
 //checks the outcome of the game.
+
+
      if(UserWins() == true){
       alert("User 1 wins");
       location.reload();
