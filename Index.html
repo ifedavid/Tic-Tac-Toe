@@ -38,15 +38,14 @@
 
 
 <script>
-      var values =[1,2,3,4,5,6,7,8,9];
-      var userInput =[];
-      var computerInput =[];
-      var MyMap = new Map();
-      var maxValue;
-      var minValue
+      var Boxes =[1,2,3,4,5,6,7,8,9]; // Creates array to register and monitor each box
+      var userInput =[]; // array that registers user input
+
+      var maxValue; // maximum index of box available
+      var minValue // minimum index of box available
      
  
-
+// function B1-B9 is the event listener for each button.
 function B1(){
            UserInput(1);
           ComputerInput();
@@ -101,271 +100,273 @@ function UserInput(i)
            
            {
             document.getElementById(i).innerText="X";
-            var check = values.indexOf(i);
-            values.splice(check,1);
-            maxValue = Math.max.apply(null, values);
-            minValue = Math.min.apply(null, values);  
-            values.sort();
+            var check = Boxes.indexOf(i); 
+            Boxes.splice(check,1); // remove the box the user picks from the boxes array
+            maxValue = Math.max.apply(null, Boxes); //gets maximum index of available box
+            minValue = Math.min.apply(null, Boxes);  // gets minimum index of available box.
+            Boxes.sort();
             
-          userInput.push(i);
+          userInput.push(i); // push userInput into the userInput array
          
            
           }
 function ComputerInput(){
-      if (values.length < 1){
-        
+      if (Boxes.length < 1){
+        //if all boxes are full, check for winner.
        CheckWinner();
       } 
    
 
      
 
-    var i =  values[Math.floor(Math.random()*values.length)];
+    var i =  Boxes[Math.floor(Math.random()*Boxes.length)]; // creates random computer input.
    
-    if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(2,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+
+   //the next couple if else statement tell the computer what to do when the user picks some certain boxes and the corresponding boxes around them are free.
+    if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(2,0) >= 0) &&(Boxes.indexOf(3,0) >= 0) )
     
     {
       i = 3;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(Boxes.indexOf(9,0) >= 0) )
     
     {
       i = 9;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-   else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(4,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+   else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(4,0) >= 0) &&(Boxes.indexOf(7,0) >= 0) )
     
     {
       i = 7;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(8,0) >= 0) )
+    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(Boxes.indexOf(8,0) >= 0) )
     
     {
       i = 8;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(Boxes.indexOf(1,0) >= 0) )
     
     {
       i = 1;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(Boxes.indexOf(9,0) >= 0) )
     
     {
       i = 9;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(Boxes.indexOf(7,0) >= 0) )
     
     {
       i = 7;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(6,0) >= 0) )
+    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(Boxes.indexOf(6,0) >= 0) )
     
     {
       i = 6;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(values.indexOf(4,0) >= 0) )
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(Boxes.indexOf(4,0) >= 0) )
     
     {
       i = 4;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(Boxes.indexOf(1,0) >= 0) )
     
     {
       i = 1;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(2,0) >= 0) )
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(Boxes.indexOf(2,0) >= 0) )
     
     {
       i = 2;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(6,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+    else if ((userInput.indexOf(6,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(Boxes.indexOf(3,0) >= 0) )
     
     {
       i = 3;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(Boxes.indexOf(3,0) >= 0) )
     
     {
       i = 3;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(Boxes.indexOf(1,0) >= 0) )
     
     {
       i = 1;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(7,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    else if ((userInput.indexOf(7,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(Boxes.indexOf(9,0) >= 0) )
     
     {
       i = 9;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(Boxes.indexOf(7,0) >= 0) )
     
     {
       i = 7;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(6,0) >= 0) )
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(Boxes.indexOf(6,0) >= 0) )
     
     {
       i = 6;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(8,0) >= 0) )
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(Boxes.indexOf(8,0) >= 0) )
     
     {
       i = 8;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(2,0)>=0&&(userInput.indexOf(8,0)>=0))&&values.indexOf(5,0) >=0){
+    else if ((userInput.indexOf(2,0)>=0&&(userInput.indexOf(8,0)>=0))&&Boxes.indexOf(5,0) >=0){
       i = 5;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
     }
-    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(4,0) >= 0) )
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(Boxes.indexOf(4,0) >= 0) )
     
     {
       i = 4;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(2,0) >= 0) )
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(Boxes.indexOf(2,0) >= 0) )
     
     {
       i = 2;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(5,0) >= 0) )
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(Boxes.indexOf(5,0) >= 0) )
     
     {
       i = 5;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
-    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(5,0) >= 0) )
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(Boxes.indexOf(5,0) >= 0) )
     
     {
       i = 5;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
 
 
-    else if (((userInput.indexOf(1,0) >= 0) || (userInput.indexOf(3,0) >= 0) || (userInput.indexOf(7,0) >= 0) || (userInput.indexOf(9,0) >= 0)) &&(values.indexOf(5,0) >= 0) )
+    else if (((userInput.indexOf(1,0) >= 0) || (userInput.indexOf(3,0) >= 0) || (userInput.indexOf(7,0) >= 0) || (userInput.indexOf(9,0) >= 0)) &&(Boxes.indexOf(5,0) >= 0) )
     
     {
       
       i = 5;
-      var check = values.indexOf(i);
-      values.splice(check,1);
-      values.sort();
+      var check = Boxes.indexOf(i);
+      Boxes.splice(check,1);
+      Boxes.sort();
       document.getElementById(i).innerText="O";
 
     }
     else{
-    var check = values.indexOf(i);
-    values.splice(check,1);
-    values.sort();
+    var check = Boxes.indexOf(i);
+    Boxes.splice(check,1);
+    Boxes.sort();
     document.getElementById(i).innerText="O";
     }
 
@@ -375,7 +376,7 @@ function ComputerInput(){
 function UserWins(){
 
     
-
+     // tests conditions for the use to win
       if (document.getElementById("1").innerText == "X" && document.getElementById("2").innerText == "X" && document.getElementById("3").innerText == "X" ){
         
           return true;
@@ -422,8 +423,8 @@ function UserWins(){
 
   }
 function ComputerWins(){
-
-
+// tests conditions for the computer to win
+.
     if (document.getElementById("1").innerText == "O" && document.getElementById("2").innerText == "O" && document.getElementById("3").innerText == "O" ){
        
         return true;
@@ -468,9 +469,7 @@ function ComputerWins(){
   return false;
 }
 function CheckWinner(){
-
-    
-
+//checks the outcome of the game.
      if(UserWins() == true){
       alert("User 1 wins");
       location.reload();
@@ -482,7 +481,7 @@ function CheckWinner(){
       }
     
      
-      else if(values.length < 1 && ComputerWins != true && UserWins != true ){
+      else if(Boxes.length < 1 && ComputerWins != true && UserWins != true ){
         alert("Game ends. its a Draw");
         location.reload();
       }
