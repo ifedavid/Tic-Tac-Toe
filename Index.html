@@ -1,0 +1,494 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+            table, th, td {
+                border: 1px solid black;
+              }
+              table{
+                  height: 250px;
+                  width: 250px;
+              }
+              button{
+                  height: 100px;
+                  width: 100px;
+              }
+    </style>
+</head>
+<body>
+  
+
+
+    <TABLE>
+            
+            <TR id="row1">
+                   
+               <TH><button onclick="B1()"  id="1"></button></TH> <TD><button onclick="B2()" id="2"></button></TD> <TD><button onclick="B3()" id="3"></button></TD>
+           
+            <TR id="row2">
+               <TH><button onclick="B4()" id="4"></button></TH> <TD><button onclick="B5()" id="5"></button></TD>  <TD><button onclick="B6()" id="6"></button></TD>
+            <TR id="row3">
+               <TH><button onclick="B7()" id="7"></button></TH> <TD><button onclick="B8()" id="8"></button></TD>  <TD><button onclick="B9()" id="9"></button></TD>
+               
+            </TABLE>
+
+         
+</body>
+
+
+<script>
+      var values =[1,2,3,4,5,6,7,8,9];
+      var userInput =[];
+      var computerInput =[];
+      var MyMap = new Map();
+      var maxValue;
+      var minValue
+     
+ 
+
+function B1(){
+           UserInput(1);
+          ComputerInput();
+           CheckWinner();
+           }
+function B2(){
+              UserInput(2);
+             ComputerInput();
+              CheckWinner();
+           }
+function B3(){
+            UserInput(3);
+           ComputerInput();
+          CheckWinner();
+           }
+function B4(){
+              UserInput(4);
+             ComputerInput();
+             CheckWinner();
+           }
+function B5(){
+             UserInput(5);
+            ComputerInput();
+            CheckWinner();
+           }
+function B6(){
+           UserInput(6);
+          ComputerInput();
+          CheckWinner();
+           }
+function B7(){
+              UserInput(7);
+             ComputerInput();
+             CheckWinner();
+           }
+function B8(){
+              UserInput(8);
+             ComputerInput();
+             CheckWinner();
+           }
+function B9(){
+            UserInput(9);
+           ComputerInput();
+            CheckWinner();
+           }
+
+
+           
+           
+           
+function UserInput(i)
+           
+           {
+            document.getElementById(i).innerText="X";
+            var check = values.indexOf(i);
+            values.splice(check,1);
+            maxValue = Math.max.apply(null, values);
+            minValue = Math.min.apply(null, values);  
+            values.sort();
+            
+          userInput.push(i);
+         
+           
+          }
+function ComputerInput(){
+      if (values.length < 1){
+        
+       CheckWinner();
+      } 
+   
+
+     
+
+    var i =  values[Math.floor(Math.random()*values.length)];
+   
+    if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(2,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+    
+    {
+      i = 3;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    
+    {
+      i = 9;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+   else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(4,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+    
+    {
+      i = 7;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(8,0) >= 0) )
+    
+    {
+      i = 8;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(2,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    
+    {
+      i = 1;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    
+    {
+      i = 9;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+    
+    {
+      i = 7;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(5,0) >= 0) &&(values.indexOf(6,0) >= 0) )
+    
+    {
+      i = 6;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(6,0) >= 0) &&(values.indexOf(4,0) >= 0) )
+    
+    {
+      i = 4;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(4,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    
+    {
+      i = 1;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(2,0) >= 0) )
+    
+    {
+      i = 2;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(6,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+    
+    {
+      i = 3;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(3,0) >= 0) )
+    
+    {
+      i = 3;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(5,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(1,0) >= 0) )
+    
+    {
+      i = 1;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(7,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(9,0) >= 0) )
+    
+    {
+      i = 9;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(8,0) >= 0) &&(values.indexOf(7,0) >= 0) )
+    
+    {
+      i = 7;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(6,0) >= 0) )
+    
+    {
+      i = 6;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(9,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(8,0) >= 0) )
+    
+    {
+      i = 8;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(2,0)>=0&&(userInput.indexOf(8,0)>=0))&&values.indexOf(5,0) >=0){
+      i = 5;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+    }
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(4,0) >= 0) )
+    
+    {
+      i = 4;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(3,0) >= 0) &&(values.indexOf(2,0) >= 0) )
+    
+    {
+      i = 2;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(1,0) >= 0) && (userInput.indexOf(9,0) >= 0) &&(values.indexOf(5,0) >= 0) )
+    
+    {
+      i = 5;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else if ((userInput.indexOf(3,0) >= 0) && (userInput.indexOf(7,0) >= 0) &&(values.indexOf(5,0) >= 0) )
+    
+    {
+      i = 5;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+
+
+    else if (((userInput.indexOf(1,0) >= 0) || (userInput.indexOf(3,0) >= 0) || (userInput.indexOf(7,0) >= 0) || (userInput.indexOf(9,0) >= 0)) &&(values.indexOf(5,0) >= 0) )
+    
+    {
+      
+      i = 5;
+      var check = values.indexOf(i);
+      values.splice(check,1);
+      values.sort();
+      document.getElementById(i).innerText="O";
+
+    }
+    else{
+    var check = values.indexOf(i);
+    values.splice(check,1);
+    values.sort();
+    document.getElementById(i).innerText="O";
+    }
+
+     computerInput.push(i);
+     
+  }
+function UserWins(){
+
+    
+
+      if (document.getElementById("1").innerText == "X" && document.getElementById("2").innerText == "X" && document.getElementById("3").innerText == "X" ){
+        
+          return true;
+         
+      }
+      else if (document.getElementById("4").innerText == "X" && document.getElementById("5").innerText == "X" && document.getElementById("6").innerText == "X" ){
+      
+        return true;
+       
+      }
+    
+    else if (document.getElementById("7").innerText == "X" && document.getElementById("8").innerText == "X" && document.getElementById("9").innerText == "X" ){
+      
+        return true;
+       
+    }
+    else if (document.getElementById("1").innerText == "X" && document.getElementById("5").innerText == "X" && document.getElementById("9").innerText == "X" ){
+      
+        return true;
+       
+    }
+    else if (document.getElementById("3").innerText == "X" && document.getElementById("5").innerText == "X" && document.getElementById("7").innerText == "X" ){
+      
+        return true;
+       
+    }
+    else if (document.getElementById("1").innerText == "X" && document.getElementById("4").innerText == "X" && document.getElementById("7").innerText == "X" ){
+      
+        return true;
+       
+    }
+    else if (document.getElementById("2").innerText == "X" && document.getElementById("5").innerText == "X" && document.getElementById("8").innerText == "X" ){
+      
+        return true;
+       
+    }
+    else if (document.getElementById("3").innerText == "X" && document.getElementById("6").innerText == "X" && document.getElementById("9").innerText == "X" ){
+      
+        return true;
+       
+    }
+
+    return false;
+
+  }
+function ComputerWins(){
+
+
+    if (document.getElementById("1").innerText == "O" && document.getElementById("2").innerText == "O" && document.getElementById("3").innerText == "O" ){
+       
+        return true;
+       
+    }
+    else if (document.getElementById("4").innerText == "O" && document.getElementById("5").innerText == "O" && document.getElementById("6").innerText == "O" ){
+     
+      return true;
+     
+    }
+  
+  else if (document.getElementById("7").innerText == "O" && document.getElementById("8").innerText == "O" && document.getElementById("9").innerText == "O" ){
+     
+      return true;
+     
+  }
+  else if (document.getElementById("1").innerText == "O" && document.getElementById("5").innerText == "O" && document.getElementById("9").innerText == "O" ){
+     
+      return true;
+     
+  }
+  else if (document.getElementById("3").innerText == "O" && document.getElementById("5").innerText == "O" && document.getElementById("7").innerText == "O" ){
+     
+      return true;
+     
+  }
+  else if (document.getElementById("1").innerText == "O" && document.getElementById("4").innerText == "O" && document.getElementById("7").innerText == "O" ){
+     
+      return true;
+     
+  }
+  else if (document.getElementById("2").innerText == "O" && document.getElementById("5").innerText == "O" && document.getElementById("8").innerText == "O" ){
+     
+      return true;
+     
+  }
+  else if (document.getElementById("3").innerText == "O" && document.getElementById("6").innerText == "O" && document.getElementById("9").innerText == "O" ){
+      return true;
+      
+  }
+
+  return false;
+}
+function CheckWinner(){
+
+    
+
+     if(UserWins() == true){
+      alert("User 1 wins");
+      location.reload();
+    }
+
+    else if (ComputerWins() == true){
+        alert("Computer wins");
+        location.reload();
+      }
+    
+     
+      else if(values.length < 1 && ComputerWins != true && UserWins != true ){
+        alert("Game ends. its a Draw");
+        location.reload();
+      }
+   
+  }
+     
+
+</script>
+</html>
