@@ -101,7 +101,7 @@ function UserInput(i)
            {
             document.getElementById(i).innerText="X";
             var check = Boxes.indexOf(i); 
-            Boxes.splice(check,1); // remove the box the user picks from the boxes array
+            Boxes.splice(check,1); // removes the box index of the box the user picks from the boxes array
             maxValue = Math.max.apply(null, Boxes); //gets maximum index of available box
             minValue = Math.min.apply(null, Boxes);  // gets minimum index of available box.
             Boxes.sort();
@@ -119,7 +119,7 @@ function ComputerInput(){
 
      
 
-    var i =  Boxes[Math.floor(Math.random()*Boxes.length)]; // creates random computer input.
+    var i =  Boxes[Math.floor(Math.random()*Boxes.length)]; // creates random computer input from the current values in the Boxes array(available boxes).
    
 
    //the next couple if else statement tell the computer what to do when the user picks some certain boxes and the corresponding boxes around them are free.
